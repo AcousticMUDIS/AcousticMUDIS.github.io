@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>PAM: Audible Sound Multi-beamforming Using Nonlinearty</title>
+        <meta charset="utf-8">
+
+        <!--  Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+        <meta name="google-site-verification" content="S58Ohwv_5YMmWlFeB6aC23Q7f20l0bCFKmwAYBE_z5U" />
+
+        <!-- MathJax -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <!-- Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2/dist/Chart.min.js"></script>
+
+        <link rel="stylesheet" href="assets/style.css" />
+        <link rel="stylesheet" href="assets/padding.css" />
+
+        <link rel="canonical" href="https://AudiblePAM.github.io/" />
+
+        <script language="JavaScript">
+        var loc = window.location.href+'';
+        if (loc.indexOf('http://')==0){
+            window.location.href = loc.replace('http://','https://');
+        }
+        </script>
+
+    </head>
+
+    <body>
+        <div class="header">
+            <h1 class="mt-5">PAM: Audible Sound Multi-beamforming Using Nonlinearty</h1>
+            <h3 style="color: #A40;">
+                Submitted to USENIX NSDI 2024.
+            </h3>
+            <h3>
+                Date: May 1, 2023.
+            </h3>
+        </div>
+        
+
+        <div class="yt-demo">
+            <hr>
+            <div class="row">
+                <div class="col-md-1 pt-4">
+                    <div class="video-container">
+                        <iframe class="youtube-video" src="https://www.youtube.com/embed/ZNhbs6lj6a0?modestbranding=1&playsinline=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+                    </div>
+                    <h3>Demo: PAM Prototype</h3>
+                    <p> 
+                        - scene 1 [10 seconds]: select two audios and the corresponding target angles (e.g., rock music at 60 degree and news at 0 degree. ) 
+                    </p>
+                    <p> 
+                        - scene 2 [5 seconds]: move the camera to our PAM system.
+                    </p>
+                    <p> 
+                        - scene 3 [15 seconds]: move to 0 degree -- we should only hear the news. Also Place a sub-windown in the corner to show the spectrum. 
+                    </p>
+                    <p> 
+                        - scene 4 [5 seconds]: move any where in the middle -- we should hear nothing and the spectrum in the sub-windown is flat.
+                    </p>
+                    <p> 
+                        - scene 5 [15 seconds]: move to 60 degree.
+                    </p>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+       <div class="comparisons">
+            <h1>Comparisons</h1>
+            <p>We show comparisons with existing methods.</a></p>
+            
+            <br>
+            <br>
+            <div class="comparisons-desktop" align="center">
+
+                <h2> Scenario 1: two users -- news radio + rock music</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="audio">
+                                <audio controls>
+                                    <source src="demos/scenario1-sound1.wav" type="audio/wav">
+                                </audio>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio">
+                                <audio controls>
+                                    <source src="demos/scenario1-sound2.wav" type="audio/wav">
+                                </audio>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>original sound at 0°: news radio</th>
+                            <th>original sound at 60°: rock music</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+                <br>
+                <h3> Sound received at 0°</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="audio">
+                                <audio controls>
+                                    <source src="demos/scenario1-rx1-pam.wav" type="audio/wav">
+                                </audio>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio">
+                                <audio controls>
+                                    <source src="demos/scenario1-rx1-sdm.wav" type="audio/wav">
+                                </audio>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio">
+                                <audio controls>
+                                    <source src="demos/scenario1-rx1-zero.wav" type="audio/wav">
+                                </audio>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>ours</th>
+                            <th>spatial division multi-beamforming</th>
+                            <th>zero-forcing multi-beamforming</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+                <br>
+                <h3> Sound received at 30°</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="audio">
+                                <audio controls>
+                                    <source src="demos/scenario1-rx2-pam.wav" type="audio/wav">
+                                </audio>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio">
+                                <audio controls>
+                                    <source src="demos/scenario1-rx2-sdm.wav" type="audio/wav">
+                                </audio>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio">
+                                <audio controls>
+                                    <source src="demos/scenario1-rx2-zero.wav" type="audio/wav">
+                                </audio>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>ours</th>
+                            <th>spatial division multi-beamforming</th>
+                            <th>zero-forcing multi-beamforming</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+                <br>
+                <h3> Sound received at 60°</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="audio">
+                                <audio controls>
+                                    <source src="demos/scenario1-rx3-pam.wav" type="audio/wav">
+                                </audio>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio">
+                                <audio controls>
+                                    <source src="demos/scenario1-rx3-sdm.wav" type="audio/wav">
+                                </audio>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="audio">
+                                <audio controls>
+                                    <source src="demos/scenario1-rx3-zero.wav" type="audio/wav">
+                                </audio>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>ours</th>
+                            <th>spatial division multi-beamforming</th>
+                            <th>zero-forcing multi-beamforming</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+        </div>
+        <br><br>
+        <hr>
+        <script src="assets/audio_height.js"></script> 
+    </body>
+</html>
