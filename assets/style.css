@@ -362,6 +362,14 @@ td audio {
   }
 }
 
+.col-md-1 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+/*  padding-right: 10px;
+  padding-left: 10px;*/
+}
+
 .col-md-2 {
   position: relative;
   width: 100%;
