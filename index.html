@@ -57,9 +57,9 @@
         <div class="narrow-container">
             <div class="abstract">
                 <h1>Abstract</h1>
-                <p>
+                <p><div style="text-align:center">
                     We propose a novel multi-directional speaker using a parametric array to generate multiple highly directional sound beams. The system leverages air nonlinearity to reproduce audible sound from ultrasounds. It overcomes the challenges in traditional parametric arrays in terms of transducer size and focused wavefront, by using a special cell structure that connects ultrasonic transducers with optimal interspace to redirect an approximate omnidirectional wavefront. An optimization-based algorithm is developed to minimize unintended leakages. To further improve sound quality, we propose a nonlinear distortion reduction scheme.
-                </p>
+                </div></p>
             </div>
 
             <br>
@@ -67,11 +67,11 @@
             <div class="row" style="text-align: center">
                 <div class="col-md-2 pt-4">
                     <img src="demo_imgs/prototype.png" style="width: 80%">
-                    <h3>Prototype</h3>
+                    <h3>Figure 1. Prototype.</h3>
                 </div>
                 <div class="col-md-2 pt-4">
                     <img src="demo_imgs/scenario.png" style="width: 80%">   
-                    <h3>Scenario</h3>
+                    <h3>Figure 2. Scenario.</h3>
                 </div>
             </div>
 
@@ -82,14 +82,21 @@
         <br>
         <br>
        <div class="comparisons">
-            <h1>Comparisons</h1>
-            <p>We show comparisons with existing methods.</a></p>
+            <h1>Performance</h1>
+            <p><div style="text-align:center">
+                We constructed a prototype of a multi-directional speaker employing our metasurface. We proceed to demonstrate the efficacy of our proposed <b> Optimization-based Beamforming </b> and <b> Nonlinear Distortion Reduction </b> scheme alongside traditional beamforming (Delay Sum Beamforming) and MVDR Beamforming scheme.
+            </div></p>
             
             <br>
             <br>
+
+            <h1>Scenario</h1>
+            <p><div style="text-align:center">
+                As depicted in Figure 2, our multi-directional speaker with the metasurface simultaneously transmits two distinct beams. The first beam is directed towards 0° to transmit a female voice, while the second beam targets 60° to transmit a male voice. Recorded voices from 0°, 30°, and 60° are provided below for reference.
+            </div></p>
             <div class="comparisons-desktop" align="center">
 
-                <h2> Scenario: Two users -- 0° for Female Voice + 60° for Male Voice</h2>
+                <h3> Original Voices. </h3>
                 <table>
                     <tbody>
                         <tr>
@@ -109,8 +116,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>Reference Sound at 0°: Female Voice</th>
-                            <th>Reference Sound at 60°: Male Voice</th>
+                            <th>0°: Female Voice</th>
+                            <th>60°: Male Voice</th>
                         </tr>
                     </tbody>
                 </table>
